@@ -16,7 +16,7 @@ import isObjectLike from './isObjectLike.js'
  * isBoolean(null)
  * // => false
  */
-function isBoolean(value) {
+function isBoolean(value: any): value is boolean | Boolean {
   return value === true || value === false ||
     (isObjectLike(value) && baseGetTag(value) == '[object Boolean]')
 }

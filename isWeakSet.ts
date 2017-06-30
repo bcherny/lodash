@@ -15,7 +15,7 @@ import getTag from './.internal/getTag.js'
  * isWeakSet(new Set)
  * // => false
  */
-function isWeakSet(value) {
+function isWeakSet<T>(value: any): value is WeakSet<T> {
   return typeof value == 'object' && value !== null && getTag(value) == '[object WeakSet]'
 }
 

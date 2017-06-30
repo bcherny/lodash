@@ -15,7 +15,7 @@ import getTag from './.internal/getTag.js'
  * isString(1)
  * // => false
  */
-function isString(value) {
+function isString(value: any): value is string | String {
   const type = typeof value
   return type == 'string' || (type == 'object' && value != null && !Array.isArray(value) && getTag(value) == '[object String]')
 }

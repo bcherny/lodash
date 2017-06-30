@@ -21,7 +21,7 @@ import baseIndexOf from './.internal/baseIndexOf.js'
  * indexOf([1, 2, 1, 2], 2, 2)
  * // => 3
  */
-function indexOf(array, value, fromIndex) {
+function indexOf<T>(array: T[] | null | undefined, value: T, fromIndex?: number | string): number {
   const length = array == null ? 0 : array.length
   if (!length) {
     return -1
@@ -30,7 +30,7 @@ function indexOf(array, value, fromIndex) {
   if (index < 0) {
     index = Math.max(length + index, 0)
   }
-  return baseIndexOf(array, value, index)
+  return baseIndexOf(array as T[], value, index)
 }
 
 export default indexOf

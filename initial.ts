@@ -12,9 +12,9 @@ import slice from './slice.js'
  * initial([1, 2, 3])
  * // => [1, 2]
  */
-function initial(array) {
+function initial<T>(array: T[] | null | undefined): T[] {
   const length = array == null ? 0 : array.length
-  return length ? slice(array, 0, -1) : []
+  return length ? slice(array as T[], 0, -1) : []
 }
 
 export default initial

@@ -20,11 +20,14 @@
  * mapValue(users, ({ age }) => age)
  * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
-function mapValue(object, iteratee) {
+function mapValue<T extends object, K extends keyof T, U>(
+  object: T,
+  iteratee: (value: T[K], key: K, object: T) => U
+): Record<K, U> {
   object = Object(object)
-  const result = {}
+  const result: Record<K, U> = {} as any
 
-  Object.keys(object).forEach((key) => {
+  Object.keys(object).forEach((key: K) => {
     result[key] = iteratee(object[key], key, object)
   })
   return result

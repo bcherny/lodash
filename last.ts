@@ -10,9 +10,9 @@
  * last([1, 2, 3])
  * // => 3
  */
-function last(array) {
+function last<T>(array: T[] | null | undefined): T | undefined {
   const length = array == null ? 0 : array.length
-  return length ? array[length - 1] : undefined
+  return length ? (array as T[])[length - 1] : undefined
 }
 
 export default last

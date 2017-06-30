@@ -21,7 +21,7 @@ import strictLastIndexOf from './.internal/strictLastIndexOf.js'
  * lastIndexOf([1, 2, 1, 2], 2, 2)
  * // => 1
  */
-function lastIndexOf(array, value, fromIndex) {
+function lastIndexOf<T>(array: T[] | null | undefined, value: T, fromIndex?: number) {
   const length = array == null ? 0 : array.length
   if (!length) {
     return -1
@@ -31,8 +31,8 @@ function lastIndexOf(array, value, fromIndex) {
     index = index < 0 ? Math.max(length + index, 0) : Math.min(index, length - 1)
   }
   return value === value
-    ? strictLastIndexOf(array, value, index)
-    : baseFindIndex(array, baseIsNaN, index, true)
+    ? strictLastIndexOf(array as T[], value, index)
+    : baseFindIndex(array as T[], baseIsNaN, index, true)
 }
 
 export default lastIndexOf

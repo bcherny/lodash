@@ -16,9 +16,9 @@
  * map({ 'a': 4, 'b': 8 }, square)
  * // => [16, 64] (iteration order is not guaranteed)
  */
-function mapObject(object, iteratee) {
+function mapObject<T, U, O extends { [k: string]: T }>(object: O, iteratee: (value: T, key: string, object: O) => U): U[] {
   const props = Object.keys(object)
-  const result = new Array(props.length)
+  const result: U[] = new Array(props.length)
 
   props.forEach((key, index) => {
     result[index] = iteratee(object[key], key, object)

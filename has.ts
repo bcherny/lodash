@@ -21,7 +21,7 @@ const hasOwnProperty = Object.prototype.hasOwnProperty
  * has(other, 'a')
  * // => false
  */
-function has(object, key) {
+function has<T extends object, K extends keyof T>(object: T | null | undefined, key: K): boolean {
   return object != null && hasOwnProperty.call(object, key)
 }
 

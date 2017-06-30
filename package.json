@@ -52,6 +52,8 @@
     "request": "^2.79.0",
     "requirejs": "^2.3.2",
     "sauce-tunnel": "^2.5.0",
+    "tslint": "^5.4.3",
+    "typescript": "^2.4.1",
     "uglify-js": "2.7.5",
     "webpack": "^1.14.0"
   },

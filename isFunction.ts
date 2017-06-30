@@ -16,7 +16,7 @@ import isObject from './isObject.js'
  * isFunction(/abc/)
  * // => false
  */
-function isFunction(value) {
+function isFunction(value: any): value is Function {
   if (!isObject(value)) {
     return false
   }

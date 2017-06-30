@@ -21,7 +21,7 @@ const nodeIsMap = nodeUtil && nodeUtil.isMap
  * // => false
  */
 const isMap = nodeIsMap
-  ? (value) => nodeIsMap(value)
-  : (value) => isObjectLike(value) && getTag(value) == '[object Map]'
+  ? <T, U>(value: any): value is Map<T, U> => nodeIsMap(value)
+  : <T, U>(value: any): value is Map<T, U> => isObjectLike(value) && getTag(value) == '[object Map]'
 
 export default isMap

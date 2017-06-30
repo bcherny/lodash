@@ -15,7 +15,7 @@
  * head([])
  * // => undefined
  */
-function head(array) {
+function head<T>(array: T[] | null | undefined): T | undefined {
   return (array != null && array.length)
     ? array[0]
     : undefined

@@ -15,7 +15,7 @@ import getTag from './.internal/getTag.js'
  * isSymbol('abc')
  * // => false
  */
-function isSymbol(value) {
+function isSymbol(value: any): value is symbol | Symbol {
   const type = typeof value
   return type == 'symbol' || (type == 'object' && value != null && getTag(value) == '[object Symbol]')
 }

@@ -16,7 +16,7 @@ import isPlainObject from './isPlainObject.js'
  * isElement('<body>')
  * // => false
  */
-function isElement(value) {
+function isElement(value: any): value is Element {
   return isObjectLike(value) && value.nodeType === 1 && !isPlainObject(value)
 }
 

@@ -9,8 +9,8 @@ import stringToArray from './stringToArray.js'
  * @param {string} methodName The name of the `String` case method to use.
  * @returns {Function} Returns the new case function.
  */
-function createCaseFirst(methodName) {
-  return (string) => {
+function createCaseFirst<T extends keyof string>(methodName: T) {
+  return (string: string) => {
     const strSymbols = hasUnicode(string)
       ? stringToArray(string)
       : undefined

@@ -13,7 +13,7 @@
  * isNull(void 0)
  * // => false
  */
-function isNull(value) {
+function isNull(value: any): value is null {
   return value === null
 }
 
